@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--config是根标签-->
+<config
+        xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance'
+        xmlns='http://www.ehcache.org/v3'
+        xsi:schemaLocation="http://www.ehcache.org/v3 http://www.ehcache.org/schema/ehcache-core.xsd">
+    <!--配置模版-->
+    <cache-template name="myDefaults">
+        <key-type>java.lang.Long</key-type>
+        <value-type>java.lang.String</value-type>
+        <heap unit="entries">200</heap>
+    </cache-template>
+        <!--从模板中配置缓存-->
+    <cache alias="book" uses-template="myDefaults">
+        <key-type>java.lang.Number</key-type>
+        <value-type>com.example.ehcahe.ehcahe.book.Book</value-type>
+    </cache>
+
+</config>
